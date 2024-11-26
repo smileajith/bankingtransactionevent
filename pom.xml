@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>banking.ajith.app</groupId>
+    <artifactId>BankingTransaction</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <scala.version>2.12.17</scala.version>
+        <spark.version>3.1.2</spark.version>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <!-- Kafka Client for Java -->
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-clients</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.13.0</version>
+        </dependency>
+
+
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.15.2</version>  <!-- Use the latest stable version -->
+        </dependency>
+
+            <!-- Apache Spark Core -->
+            <dependency>
+                <groupId>org.apache.spark</groupId>
+                <artifactId>spark-core_2.12</artifactId>
+                <version>3.3.0</version>
+            </dependency>
+
+            <!-- Apache Spark SQL -->
+            <dependency>
+                <groupId>org.apache.spark</groupId>
+                <artifactId>spark-sql_2.12</artifactId>
+                <version>3.3.0</version>
+            </dependency>
+
+            <!-- Apache Spark SQL Kafka -->
+            <dependency>
+                <groupId>org.apache.spark</groupId>
+                <artifactId>spark-sql-kafka-0-10_2.12</artifactId>
+                <version>3.3.0</version>
+            </dependency>
+
+            <!-- Spark Cassandra Connector -->
+            <dependency>
+                <groupId>com.datastax.spark</groupId>
+                <artifactId>spark-cassandra-connector_2.12</artifactId>
+                <version>3.2.0</version>
+            </dependency>
+
+        <dependency>
+        <groupId>joda-time</groupId>
+        <artifactId>joda-time</artifactId>
+        <version>2.10.10</version> <!-- Use the latest compatible version -->
+         </dependency>
+
+
+        </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Maven Compiler Plugin for Java -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+
+            <!-- Scala Maven Plugin for Scala Code -->
+            <plugin>
+                <groupId>net.alchim31.maven</groupId>
+                <artifactId>scala-maven-plugin</artifactId>
+                <version>4.5.6</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                            <goal>testCompile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>
